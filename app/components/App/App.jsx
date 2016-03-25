@@ -14,7 +14,7 @@ function getAppState() {
 
 export default class App extends React.Component {
 
-  state = getAppState()
+  state = getAppState();
 
   componentDidMount() {
     ItemsStore.addChangeListener(this.onChange);
@@ -27,13 +27,13 @@ export default class App extends React.Component {
 
   onChange = () => {
     this.setState(getAppState());
-  }
+  };
 
   render() {
     return (
       <div className={styles.app}>
         <Body items={this.state.items} />
-        <Footer />
+        <Footer />sb123
       </div>
     );
   }
