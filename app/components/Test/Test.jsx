@@ -1,6 +1,9 @@
 import React from 'react';
 import CommentBox from '../CommentBox/CommentBox';
 
+/*let data =[{author:'peter humn',text:'这是第一条评论.'},
+    {author:'jacky show',text:'这是另一条评论哦.'}
+];*/
 export default class Test extends React.Component {
     constructor(props){
         super(props);
@@ -22,7 +25,7 @@ export default class Test extends React.Component {
         return(
             <div>
             我就像一个SB:{this.state.second}
-                <CommentBox></CommentBox>
+                <CommentBox url="comments.json"></CommentBox>
             </div>
         )
     }
