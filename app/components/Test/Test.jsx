@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentBox from '../CommentBox/CommentBox';
 
 export default class Test extends React.Component {
     constructor(props){
@@ -21,6 +22,7 @@ export default class Test extends React.Component {
         return(
             <div>
             我就像一个SB:{this.state.second}
+                <CommentBox></CommentBox>
             </div>
         )
     }
