@@ -7,12 +7,12 @@ import CommentBox from '../CommentBox/CommentBox';
 export default class Test extends React.Component {
     constructor(props){
         super(props);
-        console.log('contructor');
+        //console.log('contructor');
         this.state={second:1};
-        console.log(this.state)
+        //console.log(this.state)
     }
     tick(){
-        console.log(this.state);
+        //console.log(this.state);
         this.setState({second:this.state.second +1});
     }
     componentDidMount(){
