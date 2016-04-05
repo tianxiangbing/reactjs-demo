@@ -1,27 +1,24 @@
 import styles from './_Body.scss';
 import React from 'react';
 import Menu from '../Menu/Menu';
+import TickTock from "../TickTock/TickTock";
+import FacyCheckbox from "../FancyCheckbox/FancyCheckbox";
 
 let { PropTypes } = React;
 
-export default class Body extends React.Component {
 
-  static defaultProps = {
-    items: []
-  };
-
-  static propTypes = {
-    items: PropTypes.array.isRequired
-  };
-
+var Body = React.createClass({
   render() {
     return (
       <div className={styles.body}>
-        <h1 className={styles.header}>React Seed</h1>
-        <p>This is an example seed app, powered by React, ES6 &amp; webpack.</p>
+        <h1 className={styles.header}>React Seed test123</h1>
+        <p>定时器:<TickTock></TickTock></p>
         <p>Here is some example data:</p>
         <Menu items={this.props.items} />
-        <h2>Getting started</h2>
+        <h2>Getting1 123</h2>
+        <FacyCheckbox title="123" checked={true} onClick={console.log.bind(console)}>
+          Hello,World!
+        </FacyCheckbox>
         <p>Here's a couple of things you can do to get familiar with the project:</p>
         <ol>
           <li>Change some of the text the body component. You can find it here: <pre>./app/components/Body/Body.jsx</pre></li>
@@ -30,5 +27,13 @@ export default class Body extends React.Component {
         </ol>
       </div>
     );
+  },
+  defaultProps : {
+    items: []
+  },
+  propTypes : {
+    items: PropTypes.array.isRequired
   }
-}
+});
+
+export default Body;
