@@ -3,17 +3,29 @@ import React from 'react';
 import Menu from '../Menu/Menu';
 import TickTock from "../TickTock/TickTock";
 import FacyCheckbox from "../FancyCheckbox/FancyCheckbox";
+import Input from "../Input/Input";
+import Select from "../Select/Select";
 
 let { PropTypes } = React;
 
 
 var Body = React.createClass({
+  getInitialState(){
+    return {value:null};
+  },
+  onParentCallback(e){
+    this.setState({value:e});
+    console.log('parent:'+e);
+    console.log('parent-state:'+this.state.value);
+  },
   render() {
     return (
       <div className={styles.body}>
         <h1 className={styles.header}>React Seed test123</h1>
         <p>定时器:<TickTock></TickTock></p>
         <p>Here is some example data:</p>
+        <Input parentCallback={this.onParentCallback}/>
+        <Select/>
         <Menu items={this.props.items} />
         <h2>Getting1 123</h2>
         <FacyCheckbox title="123" checked={true} onClick={console.log.bind(console)}>
