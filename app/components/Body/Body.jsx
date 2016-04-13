@@ -5,18 +5,24 @@ import TickTock from "../TickTock/TickTock";
 import FacyCheckbox from "../FancyCheckbox/FancyCheckbox";
 import Input from "../Input/Input";
 import Select from "../Select/Select";
+import InnerComponent from '../InnerComponent/InnerComponent';
 
 let { PropTypes } = React;
 
 
 var Body = React.createClass({
   getInitialState(){
-    return {value:null};
+    return {value:{foo:'bar'}};
   },
   onParentCallback(e){
     this.setState({value:e});
     console.log('parent:'+e);
     console.log('parent-state:'+this.state.value);
+  },
+  onClick(e){
+    var value = this.state.value;
+    value.foo+='bar';
+    this.setState({value:value});
   },
   render() {
     return (
@@ -31,6 +37,9 @@ var Body = React.createClass({
         <FacyCheckbox title="123" checked={true} onClick={console.log.bind(console)}>
           Hello,World!
         </FacyCheckbox>
+        InnerComponent=========
+        <InnerComponent value={this.state.value}/>
+        <a onClick={this.onClick}>Click me change Foo</a>
         <p>Here's a couple of things you can do to get familiar with the project:</p>
         <ol>
           <li>Change some of the text the body component. You can find it here: <pre>./app/components/Body/Body.jsx</pre></li>
